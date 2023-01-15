@@ -1,0 +1,133 @@
+*{
+  padding:0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body{
+  margin: 0;
+}
+.error{
+  color:red;
+}
+header{
+  display: flex;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 0px 8px #dedede;
+  height: 80px;
+  justify-content: space-around;
+  align-items: center;
+}
+header .logo{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  color:blueviolet
+}
+header nav ul li{
+  list-style: none;
+  float: left;
+}
+nav{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+header nav ul li .link{
+  font-weight: bold;
+  height: 100%;
+  color:hsl(0, 0%, 35%);
+  padding: 10px;
+  text-decoration:none;
+  transition: 0.2s ease-in-out;
+  border-radius: 10px;
+}
+header nav ul li .link:hover{
+  color:rgb(56, 56, 56);
+  background-color:aliceblue;
+}
+main{
+  margin: 0;
+  width: 80%;
+  margin: auto;
+}
+
+.notfound{
+  width:40%;
+  text-align: center;
+  margin:100px auto;
+
+}
+.form-login{
+  width:330px;
+  margin:80px auto;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 8px #dedede;
+  padding: 20px;
+}
+.fg{
+  margin: 10px 0px;
+}
+.form-login input{
+  color: black;
+  margin-top: 2px;
+  border: 1px solid rgb(105, 105, 105);
+  border-radius: 3px;
+  width:100%;
+  font-weight: bold;
+  height: 40px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+}
+.form-login button{
+  padding: 10px;
+  background-color:blueviolet;
+  color:white;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+}
+
+.mybook .flex{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.mybook .flex .box-item{
+  width: 200px;
+  overflow: hidden;
+  box-shadow: 0px 0px 8px #dedede;
+  border-radius: 3px;
+  text-align: center;
+  height: 100%;
+}
+
+.box-img{
+  background-color: #cecece;
+  height: 200px;
+}
+.book-reader{
+  margin: 40px 0px;
+  justify-content: space-around;
+  display:flex;
+  width:100%;
+
+}
+.bok-title{
+  height: 100%;
+  width: 400px;
+  position: sticky;
+  top:80px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.book-show{
+  height: 100vh;
+  border-left: 2px solid;
+  padding: 2px;
+  box-sizing: border-box;
+  width: 100%;
+}
