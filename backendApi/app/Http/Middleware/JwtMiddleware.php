@@ -29,6 +29,7 @@ class JwtMiddleware extends BaseMiddleware
                 ]);
             } elseif($e instanceof TokenExpiredException){
                 return response()->json([
+                    'expired' => true,
                     'status' => 'Token expired'
                 ]);
             }else {

@@ -8,7 +8,7 @@ import MyBook from './routes/MyBook'
 import MyProfile from './routes/MyProfile'
 import ReadBook from './routes/ReadBook'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -25,8 +25,8 @@ const router = createBrowserRouter([
         element: <MyBook />
       },
       {
-        path : 'myprofile',
-        element : <MyProfile/>
+        path: 'myprofile',
+        element: <MyProfile />
       },
       {
         path: 'mybook/read/:id/:title',
