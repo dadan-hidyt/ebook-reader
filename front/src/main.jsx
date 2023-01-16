@@ -7,9 +7,9 @@ import Login from './routes/Login'
 import MyBook from './routes/MyBook'
 import MyProfile from './routes/MyProfile'
 import ReadBook from './routes/ReadBook'
+import getUserData from './userData'
 import './index.css'
 import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         element: <MyProfile />
       },
       {
-        path: 'mybook/read/:id/:title',
+        path: 'mybook/read/:id',
         element: <ReadBook />
       }
     ]

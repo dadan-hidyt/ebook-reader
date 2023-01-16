@@ -16,7 +16,7 @@ function Login(){
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-
+        //proses request login to server
         axios.post('http://localhost:8000/api/login',{email:email,password:password}).then(function(e){
             if (e.data.status == true){
                localStorage.setItem('token',e.data.token);
@@ -28,13 +28,19 @@ function Login(){
             }
         }).catch(function(error){
             setLoading(false);
-            setError(error?.response?.data);
+            if(error.code == 'ERR_NETWORK'){
+                alert(error.code);
+            }
+             setError(error?.response?.data ?? error);
+
         });
     }
     return (
         <>
             <div className="form-login">
-                <span>{ error.messages ?? null }</span>
+                <span>
+                    <center>{ error?.message ?? error?.messages ?? '' }</center>
+                </span>
             <form onSubmit={handleLogin} action="" method="post">
                 <div className="fg">
                     <label htmlFor="email">Email</label>

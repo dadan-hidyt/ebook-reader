@@ -1,10 +1,16 @@
-import { useEffect} from "react";
+import { useEffect,useState} from "react";
 import { useParams } from "react-router-dom"
 import ViewSDKClient from "../SDK/ViewSDKClient";
+import findBook from "../findBook";
 function ReadBook({ params }) {
-    const { id, title } = useParams();
-
+    const { id } = useParams();
+    const [bookItem,setBookItem] = useState(null);
     useEffect(()=>{
+        findBook(id).then(function(e){
+            console.log(e);
+        }).catch(function(e){
+            console.error(e);
+        });
         const viewSDKClient = new ViewSDKClient();
         viewSDKClient.ready().then(() => {
             /* Invoke file preview */
@@ -19,7 +25,7 @@ function ReadBook({ params }) {
     return (
         <>
             <div className="book-reader">
-                <div className="bok-title"><h1>{title}</h1></div>
+                <div className="bok-title"><h1>{id}</h1></div>
                 <div className="book-show">
                   <div id="pdf-div" className="full-window-div">Loading...</div>
                 </div>

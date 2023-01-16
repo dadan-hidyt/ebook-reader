@@ -1,20 +1,14 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-
+import getUserData from '../userData';
 function MyProfile(){
     const [userProfile,setUserProfile] = useState();
     useEffect(function() {
-        const userToken = localStorage.getItem('token');
-        axios.get('http://localhost:8000/api/myprofile?token='+userToken, {
-            headers : {
-                Authorization : `Bearer ${userToken}`
-            }
-        }).then(function(response){
-            setUserProfile(response.data);
-        }).catch(function(e){
-            alert("error when request data");
-        });
+        //get user data
+       getUserData().then(function(response){
+         setUserProfile(response.data);
+       });
     })
     return (
         <>
